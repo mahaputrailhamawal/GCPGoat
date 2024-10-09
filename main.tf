@@ -10,6 +10,7 @@ resource "google_project" "my_project" {
   name            = "Gcp-Goat"
   project_id      = "gcp-goat-${random_id.bucket_prefix.hex}"
   billing_account = data.google_billing_account.acct.id
+  deletion_policy = "DELETE"
 }
 
 variable "region" {
