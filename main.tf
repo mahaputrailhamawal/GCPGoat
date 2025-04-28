@@ -701,7 +701,7 @@ resource "google_storage_bucket_object" "object" {
 # Create Cloud Function
 resource "google_cloudfunctions_function" "function" {
   name                  = "blogapp-${random_id.bucket_prefix.hex}"
-  runtime               = "nodejs12" # Switch to a different runtime if needed
+  runtime               = "nodejs18" # Switch to a different runtime if needed
   project               = google_project.my_project.project_id
   available_memory_mb   = 128
   source_archive_bucket = google_storage_bucket.bucket.name
